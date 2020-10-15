@@ -1,0 +1,111 @@
+*,
+*:before,
+*:after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+$orange: #ffa728;
+$red: #e66c6e;
+$green: #a7d6bb;
+$blue: #1c4961;
+
+html {
+	font-size: 15px;
+}
+
+body {
+	font-family: "Courier New", Courier, monospace;
+	font-size: 1.1rem;
+	line-height: 1.2;
+	background-color: #fcecd7;
+}
+.header {
+	padding: 1.3rem 0;
+	margin-bottom: 3rem;
+}
+.filter {
+	display: flex;
+	justify-content: center;
+	max-width: 85.3rem;
+	margin: 0 auto;
+}
+.button {
+	padding: 0.8rem 1.6rem;
+	margin-right: 1.2rem;
+	color: #fff;
+	cursor: pointer;
+	text-transform: uppercase;
+	font-weight: bold;
+	outline: none;
+	position: relative;
+	&:last-child {
+		margin-right: 0;
+	}
+	&:active {
+		bottom: -0.1rem;
+	}
+}
+.button-color-all {
+	background-color: $orange;
+}
+.button-color-film {
+	background-color: $green;
+}
+.button-color-book {
+	background-color: $red;
+}
+.button-color-music {
+	background-color: $blue;
+}
+.container {
+	display: flex;
+	flex-wrap: wrap;
+	max-width: 85.3rem;
+	margin: 0 auto;
+}
+.card {
+	width: calc(33.33333% - 4.8rem);
+	height: 13.3rem;
+	margin: 2.4rem;
+	line-height: 13.3rem;
+	text-align: center;
+	color: #fff;
+	font-weight: bold;
+	font-size: 3.2rem;
+	overflow: hidden;
+	transition: 0.5s all;
+}
+.film {
+	background-color: $green;
+}
+.book {
+	background-color: $red;
+}
+.music {
+	background-color: $blue;
+}
+.animate {
+	transform: scale(0);
+	opacity: 0;
+}
+.hide {
+	animation-name: hide;
+	animation-duration: 0.5s;
+	animation-fill-mode: forwards;
+}
+@keyframes hide {
+	0% {
+		visibility: visible;
+		height: 13.3rem;
+	}
+	100% {
+		visibility: hidden;
+		width: 0;
+		height: 0;
+		max-width: 0;
+		font-size: 0;
+		margin: 0;
+	}
+}

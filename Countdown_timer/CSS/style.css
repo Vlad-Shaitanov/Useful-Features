@@ -1,0 +1,140 @@
+*,
+*:before,
+*:after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+html {
+	font-size: 15px;
+}
+body {
+	background: #0c4131 url("../IMG/background.jpg") center no-repeat;
+	background-size: cover;
+	background-position: top center;
+
+	height: 100vh;
+	color: #ffffff;
+	font-family: "Rubik", sans-serif;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+
+	overflow: hidden;
+}
+
+/*Темный оверлей*/
+body::after {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.3);
+}
+.countdowm-wrapper {
+	z-index: 1;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+}
+.title {
+	font-size: 4rem;
+	margin: 0 0 1.3rem;
+}
+.year {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	font-size: 13.3rem;
+	line-height: 1;
+	z-index: -1;
+	opacity: 0.4;
+}
+.countdown {
+	display: none;
+	align-items: center;
+	justify-content: center;
+}
+.time {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	margin: 2rem;
+}
+.time h2 {
+	margin: 0 0 0.6rem;
+	font-size: 3.2rem;
+}
+.time small {
+	font-size: 1.8rem;
+}
+
+/* Preloader */
+.lds-ripple {
+	display: inline-block;
+	position: relative;
+	width: 5.3rem;
+	height: 5.3rem;
+}
+.lds-ripple div {
+	position: absolute;
+	border: 0.3rem solid #ffffff;
+	opacity: 1;
+	border-radius: 50%;
+	animation: lds-ripple 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+}
+.lds-ripple div:nth-child(2) {
+	animation-delay: -0.5s;
+}
+@keyframes lds-ripple {
+	0% {
+		top: 2.4rem;
+		left: 2.4rem;
+		width: 0;
+		height: 0;
+		opacity: 1;
+	}
+	100% {
+		top: 0px;
+		left: 0px;
+		width: 4.8rem;
+		height: 4.8rem;
+		opacity: 0;
+	}
+}
+
+/* Media */
+@media (max-width: 33.3rem) {
+	.title {
+		font-size: 2.3rem;
+	}
+
+	.year {
+		display: none;
+	}
+
+	.countdown {
+		align-items: center;
+	}
+
+	.time {
+		margin: 0.6rem;
+	}
+
+	.time h2 {
+		font-size: 2.1rem;
+		margin: 0;
+	}
+
+	.time small {
+		font-size: 1rem;
+	}
+}

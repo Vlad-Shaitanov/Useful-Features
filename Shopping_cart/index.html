@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<title>Shopping cart</title>
+</head>
+
+<body>
+
+	<div class="container">
+		<div class="row">
+			<div class="col-10 offset-1">
+				<table class="table" id="basket">
+					<thead>
+						<tr>
+							<th>Название</th>
+							<th class="text-end">Стоимость</th>
+							<th>Количество</th>
+							<th class="text-end">Подитог</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr class="basket-item">
+							<td class="align-midle">Продукт 1</td>
+							<td class="align-midle price text-end">1000 руб.</td>
+							<td class="align-midle count">
+								<div class="input-group">
+									<button type="button" class="btn btn-primary btn-minus">-</button>
+									<input type="number" value="2" data-price="1000" class="form-control input"
+										disabled>
+									<button type="button" class="btn btn-primary btn-plus">+</button>
+								</div>
+							</td>
+							<td class="align-midle text-end subtotal">2000 руб.</td>
+						</tr>
+						<tr class="basket-item">
+							<td class="align-midle">Продукт 2</td>
+							<td class="align-midle price text-end">2000 руб.</td>
+							<td class="align-midle count">
+								<div class="input-group">
+									<button type="button" class="btn btn-primary btn-minus">-</button>
+									<input type="number" value="5" data-price="2000" class="form-control input"
+										disabled>
+									<button type="button" class="btn btn-primary btn-plus">+</button>
+								</div>
+							</td>
+							<td class="align-midle text-end subtotal">10000 руб.</td>
+						</tr>
+					</tbody>
+				</table>
+				<div class="total-price fw-bold text-end pr-2">Итого: <span id="total-price"></span> руб.</div>
+			</div>
+		</div>
+	</div>
+
+	<script src="main.js"></script>
+
+</body>
+
+</html>

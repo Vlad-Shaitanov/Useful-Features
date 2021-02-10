@@ -45,6 +45,10 @@ body {
 	margin: 0 auto;
 	color: #fff;
 	padding: 30px 0;
+
+	* {
+		outline: none;
+	}
 }
 
 .form__body {
@@ -72,6 +76,11 @@ body {
 	padding: 0 20px;
 	border-radius: 5px;
 	font-size: 20px;
+	transition: all 0.5s ease 0s;
+
+	&:focus {
+		box-shadow: 0 0 25px #96ca79;
+	}
 }
 
 textarea {
@@ -85,9 +94,11 @@ textarea {
 .options {
 	padding: 10px 0 0 0;
 }
+
 .options__item {
 	margin: 0 0 10px 0;
 }
+
 .options__input {
 	display: none;
 	&:checked {
@@ -98,12 +109,14 @@ textarea {
 		}
 	}
 }
+
 .options__label {
 	display: inline-flex;
 	font-size: 18px;
 	line-height: 140%;
 	align-items: center;
 	position: relative;
+	cursor: pointer;
 
 	&::before {
 		content: "";
@@ -128,23 +141,124 @@ textarea {
 		transform: scale(0);
 	}
 }
-.select {
+
+.form__select {
+	height: 50px;
+	width: 100%;
+	border-radius: 5px;
+	font-size: 18px;
+	padding: 0 20px;
 }
 .file {
 }
 .file__item {
+	position: relative;
 }
+
 .file__input {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+	font-size: 0;
+	cursor: pointer;
 }
+
 .file__button {
+	display: inline-flex;
+	min-height: 40px;
+	border-radius: 30px;
+	justify-content: center;
+	align-items: center;
+	padding: 0 20px;
+	background-color: #77608d;
 }
+
 .file__preview {
+	display: inline-block;
+	max-width: 100%;
+	padding: 10px 0 0 0;
+
+	img {
+		max-width: 100%;
+	}
 }
 .checkbox {
 }
 .checkbox__input {
+	display: none;
+
+	&:checked {
+		+ .checkbox__label {
+			&:after {
+				transform: scale(1);
+			}
+		}
+	}
 }
+
 .checkbox__label {
+	display: inline-flex;
+	align-items: center;
+	font-size: 16px;
+	line-height: 140%;
+	position: relative;
+	cursor: pointer;
+
+	&::before {
+		content: "";
+		flex: 0 0 24px;
+		align-self: flex-start;
+		height: 24px;
+		background-color: #fff;
+		border-radius: 4px;
+		margin: 0 10px 0 0;
+	}
+
+	&::after {
+		transition: transform 0.5s ease 0s;
+		content: "";
+		height: 16px;
+		width: 16px;
+		position: absolute;
+		top: 4px;
+		left: 4px;
+		background-color: #7a956b;
+		border-radius: 4px;
+		transform: scale(0);
+	}
+
+	a {
+		color: #7a956b;
+	}
 }
+
 .form__button {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 60px;
+	background-color: #7a956b;
+	color: #fff;
+	font-size: 18px;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	font-weight: 700;
+	cursor: pointer;
+	border-radius: 20px;
+	box-shadow: 0 5px 0 #586e4c;
+	position: relative;
+	top: 0;
+
+	&:hover {
+		background-color: #69af43;
+	}
+
+	&:active {
+		top: 3px;
+		box-shadow: 0 2px 0 #586e4c;
+	}
 }

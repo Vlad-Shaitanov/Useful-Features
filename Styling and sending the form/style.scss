@@ -81,6 +81,10 @@ body {
 	&:focus {
 		box-shadow: 0 0 25px #96ca79;
 	}
+
+	&._error {
+		box-shadow: 0 0 15px red;
+	}
 }
 
 textarea {
@@ -185,8 +189,18 @@ textarea {
 		max-width: 100%;
 	}
 }
+
 .checkbox {
 }
+
+.checkbox._error {
+	.checkbox__label {
+		&::before {
+			box-shadow: 0 0 15px red;
+		}
+	}
+}
+
 .checkbox__input {
 	display: none;
 

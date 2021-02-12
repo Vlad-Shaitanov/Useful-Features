@@ -80,6 +80,10 @@ body {
   box-shadow: 0 0 25px #96ca79;
 }
 
+.form__input._error {
+  box-shadow: 0 0 15px red;
+}
+
 textarea.form__input {
   max-height: 120px;
   resize: vertical;
@@ -175,6 +179,10 @@ textarea.form__input {
 
 .file__preview img {
   max-width: 100%;
+}
+
+.checkbox._error .checkbox__label::before {
+  box-shadow: 0 0 15px red;
 }
 
 .checkbox__input {

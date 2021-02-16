@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="style.css">
+	<title>TinyMCE Editor</title>
+</head>
+
+<body>
+
+	<div class="wrapper">
+		<h1 class="title">TinyMCE Quick Start</h1>
+		<form method="post">
+			<textarea id="mytextarea" name="mytextarea">
+	      Hello, World!
+	    </textarea>
+		</form>
+		<button class="get-editor-data" type="button">Get data</button>
+	</div>
+
+	<!--Вставка редактора на страницу-->
+	<script src="https://cdn.tiny.cloud/1/qp4skvrjvwrbc4hfj5iuyed4w4lwemhzeqrvk91gprec8u6k/tinymce/5/tinymce.min.js"
+		referrerpolicy="origin"></script>
+
+	<!--Конфигурация редактора (именно в таком порядке)-->
+	<script>
+		tinymce.init({
+			selector: '#mytextarea',
+			toolbar: "undo redo | styleselect | bold italic| alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | print preview media fullpage | forecolor backcolory | outdent indent",
+			plugins: "code"
+		});
+	</script>
+
+	<script src="main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width initial-scale=1.0">
+    <title>TailwindCSS Practice</title>
+    <!--CDN-ссылка Tailwind-->
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+<body class="text-gray-700">
+
+    <div class="container mx-auto px-4">
+        <header class="flex justify-between text-2xl py-8 border-b-2 border-pink-300 mb-8">
+            <a href="#">Logo</a>
+            <ul class="flex justify-between">
+                <li><a href="#">About</a></li>
+                <li class="ml-8"><a href="#">Info</a></li>
+                <li class="ml-8"><a href="#">Contacts</a></li>
+            </ul>
+        </header>
+        <div class="grid grid-cols-3 gap-4 text-center">
+            <div class="transition duration-500 ease-in-out bg-pink-300 hover:bg-pink-500 p-8 rounded-xl">1</div>
+            <div class="transition duration-500 ease-in-out bg-pink-300 hover:bg-pink-500 p-8 rounded-xl">2</div>
+            <div class="transition duration-500 ease-in-out bg-pink-300 hover:bg-pink-500 p-8 rounded-xl">3</div>
+            <div class="transition duration-500 ease-in-out bg-pink-300 hover:bg-pink-500 p-8 rounded-xl">4</div>
+            <div class="transition duration-500 ease-in-out bg-pink-300 hover:bg-pink-500 p-8 rounded-xl">5</div>
+            <div class="transition duration-500 ease-in-out bg-pink-300 hover:bg-pink-500 p-8 rounded-xl">6</div>
+            <div class="transition duration-500 ease-in-out bg-pink-300 hover:bg-pink-500 p-8 rounded-xl">7</div>
+            <div class="transition duration-500 ease-in-out bg-pink-300 hover:bg-pink-500 p-8 rounded-xl">8</div>
+            <div class="transition duration-500 ease-in-out bg-pink-300 hover:bg-pink-500 p-8 rounded-xl">9</div>
+        </div>
+
+        <div class="flex justify-center py-8">
+            <svg class="animate-bounce w-6 h-6 text-amber-900" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
+                <path d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+            </svg>
+        </div>
+        <div class="history">
+            <h2 class="text-center text-4xl font-bold mb-4 underline text-pink-500">Our history</h2>
+           
+            <div class="grid grid-cols-2 mb-8">
+                <div class="ml-14 pr-4"><img src="Monaco.jpg" alt=""></div>
+                <div class="mr-14 pl-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos accusantium facere fugit culpa, doloremque quidem porro provident voluptatibus ipsum corporis blanditiis facilis fuga, pariatur illum. Neque atque magni temporibus nemo.</div>
+                <div class="ml-14 pr-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, sapiente quae cumque laudantium culpa, rerum quos recusandae, delectus temporibus, totam molestias! Nobis quidem temporibus dolore obcaecati! Aut odit, unde asperiores.</div>
+                <div class="mr-14 pl-4"><img src="Monaco.jpg" alt=""></div>
+            </div>
+        </div>
+        <div class="bg-pink-300 p-8 rounded-md">
+            <h2 class="text-lg mb-4">Subscribe me!</h2>
+            <form action="" class="flex text-lg -m-2 w-full">
+                <input class="border-2 border-pink-400 rounded-md placeholder-pink-400 px-8 py-4 m-2 w-2/5" type="text" placeholder="Your name:">
+                <input class="border-2 border-pink-400 rounded-md placeholder-pink-400 px-8 py-4 m-2 w-2/5" type="email" placeholder="Your email:">
+                <button class="bg-pink-400 rounded-md border-2 border-pink-400 px-8 py-4 text-white m-2 w-1/5" type="submit">Subscribe</button>
+            </form>
+        </div>
+
+    </div>
+
+</body></html>

@@ -1,11 +1,33 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Показ\скрытие блоков кода при изменении размера карты</title>
-</head>
-<body>
-	
-</body>
+<html lang="ru">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<script src="https://api-maps.yandex.ru/2.1/?apikey=fa7f8f4e-eef3-4998-8dec-29f5ad865452&lang=ru_RU" type="text/javascript">
+		</script>
+		<link rel="stylesheet" href="style.css">
+		<title>Отображение\скрытие блоков кода при изменении размера карты</title>
+	</head>
+	<body>
+		
+		<div class="container">
+			<ul class="list">
+				<li class="visible">
+					<div tabindex="0" class="all btn" data-coords="56.324479, 43.998991" data-id="1">кнопка карты 1</div>
+				</li>
+				<li class="visible">
+					<div tabindex="0" class="all btn" data-coords="56.318851, 43.986202" data-id="2">кнопка карты 2</div>
+				</li>
+				<li class="visible">
+					<div tabindex="0" class="all btn" data-coords="56.324264, 44.014312" data-id="3">кнопка карты 3</div>
+				</li>
+				<li class="visible">
+					<div tabindex="0" class="all btn" data-coords="56.324622, 44.028903" data-id="4">кнопка карты 4</div>
+				</li>
+			</ul>
+			<div class="message">Нет доступных элементов</div>
+			<div id="map"></div>
+		</div>
+		<script src="main.js"></script>
+	</body>
 </html>

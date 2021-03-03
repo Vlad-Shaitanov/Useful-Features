@@ -1,0 +1,37 @@
+*,
+*:before,
+*:after{
+	-webkit-box-sizing: border-box;
+	        box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+.container{
+	max-width: 1100px;
+	margin: 20px auto 0;
+}
+
+.list{
+	margin-bottom: 30px;
+}
+
+.message{
+	display: none;
+	font-size: 20px;
+	color: red;
+}
+
+/*Стили текста на карте*/
+.ya_map {
+	font-family: arial;
+	font-size: 12px;
+	color: #454545;
+}
+
+
+ /*Размеры карты*/
+#map {
+	width: 660px;
+	height: 300px;
+}

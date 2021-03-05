@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="style.css">
+		<title>Modal window</title>
+	</head>
+	<body>
+		
+		<button class="btn" data-path="one">Окно 1</button>
+		<button class="btn" data-path="two">Окно 2</button>
+		<div class="modals">
+			<div class="modal-overlay">
+				<div class="modal modal__1" data-target="one">
+					Окно 1
+				</div>
+				<div class="modal modal__2" data-target="two">
+					Окно 2
+				</div>
+			</div>
+		</div>
+		<script src="main.js"></script>
+	</body>
+</html>

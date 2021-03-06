@@ -1,0 +1,86 @@
+
+/*===== Подключение шрифтов =====*/
+
+@font-face {
+  font-family: "Segoe UI";
+  font-weight: 300;
+  font-style: italic;
+
+  font-display: swap;
+  src: url("../fonts/SegoeUI-LightItalic.woff2") format("woff2"),
+  url("../fonts/SegoeUI-LightItalic.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Forum";
+  font-weight: normal;
+  font-style: normal;
+
+  font-display: swap;
+  src: url("../fonts/Forum.woff2") format("woff2"),
+  url("../fonts/Forum.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Futura PT";
+  font-weight: normal;
+  font-style: normal;
+
+  font-display: swap;
+  src: url("../fonts/FuturaPT-Book.woff2") format("woff2"),
+  url("../fonts/FuturaPT-Book.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Futura PT";
+  font-weight: 500;
+  font-style: normal;
+
+  font-display: swap;
+  src: url("../fonts/FuturaPT-Medium.woff2") format("woff2"),
+  url("../fonts/FuturaPT-Medium.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Futura PT";
+  font-weight: 300;
+  font-style: normal;
+
+  font-display: swap;
+  src: url("../fonts/FuturaPT-Light.woff2") format("woff2"),
+  url("../fonts/FuturaPT-Light.woff") format("woff");
+}
+
+
+/*===== Base =====*/
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+}
+
+html {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  min-width: 320px;
+  overflow-x: hidden;
+
+  font-family: "Futura PT", sans-serif;
+  font-size: 18px;
+  color: #272727;
+
+  background-color: var(--main-color);
+}
+
+img {
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}

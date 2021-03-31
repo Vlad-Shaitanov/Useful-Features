@@ -1,7 +1,7 @@
 "use strict";
 
 const api = {
-	key: "0a446b030f49083e8e17b011c150a6ac",
+	key: "Personal key. See in my account OpenWeather",
 	baseurl: "http://api.openweathermap.org/data/2.5/",
 };
 

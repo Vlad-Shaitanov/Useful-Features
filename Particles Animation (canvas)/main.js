@@ -18,6 +18,8 @@
 		particleRadius: 3,//Радиус окружности частицы
 		particleCount: 60,//Количество частиц на канвасе
 		particleMaxVelocity: 0.5,//Скорость частиц
+		lineLength: 150,//Максимальная длина соединения между частицами
+		particleLife: 6,//Жизненный цикл частицы(секунд)
 	};
 
 	//Добавляем канвас на страницу
@@ -41,6 +43,8 @@
 			//Скорость частиц по оси У
 			this.velocityY = Math.random() * (properties.particleMaxVelocity * 2) - properties.particleMaxVelocity;
 
+			this.life = Math.random() * properties.particleLife * 60;
+
 		}
 
 		//Положение частиц в текущий момент
@@ -51,7 +55,7 @@
 			оставляем все как есть*/
 			this.x + this.velocityX > w && this.velocityX > 0 || this.x + this.velocityX < 0 && this.velocityX < 0 ? this.velocityX *=-1 : this.velocityX;
 			//Аналогично проверяем ось У
-			this.y + this.velocityY > w && this.velocityY > 0 || this.y + this.velocityY < 0 && this.velocityY < 0 ? this.velocityY *=-1 : this.velocityY;
+			this.y + this.velocityY > h && this.velocityY > 0 || this.y + this.velocityY < 0 && this.velocityY < 0 ? this.velocityY *=-1 : this.velocityY;
 
 			this.x += this.velocityX;
 			this.y += this.velocityY;
@@ -67,6 +71,24 @@
 			ctx.fillStyle = properties.particleColor;//Цвет
 			ctx.fill();//Заливка
 		}
+
+		//Жизненный цикл частиц
+		reCalculateLife(){
+			if(this.life < 1){
+				//Пересчитываем положение
+
+
+				this.x = Math.random() * w;
+				this.y = Math.random() * h;
+			
+				this.velocityX = Math.random() * (properties.particleMaxVelocity * 2) - properties.particleMaxVelocity;
+			
+				this.velocityY = Math.random() * (properties.particleMaxVelocity * 2) - properties.particleMaxVelocity;
+
+				this.life = Math.random() * properties.particleLife * 60;
+			}
+			this.life--;
+		}
 	}
 
 	//Обновление фона
@@ -75,9 +97,47 @@
 		ctx.fillRect(0, 0, w, h);
 	}
 
+	//Линии между частицами
+	function drawLines(){
+		let x1, y1, x2, y2, length, opacity;
+
+		//Проверяем расстояние между частицами(проход по массиву с частицами)
+		for(let i in particles){
+			for(let k in particles){
+				//Присваиваем переменным координаты частиц
+				//Первая частица
+				x1 = particles[i].x;
+				y1 = particles[i].y;
+
+				//Вторая частица
+				x2 = particles[k].x;
+				y2 = particles[k].y;
+
+				/*Расстояние рассчитывается по формуле диагонали:
+				квадратный корень из суммы квадратов*/
+				length = Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
+
+				if(length < properties.lineLength){
+					//Соединяем частицы линией
+					opacity = 1 - length / properties.lineLength;
+					ctx.lineWidth = "0.5";
+					ctx.strokeStyle = `rgba(255, 40, 40, ${opacity})`;
+					ctx.beginPath();
+					ctx.moveTo(x1, y1);
+					ctx.lineTo(x2, y2);
+					ctx.closePath();
+					ctx.stroke();//Отрисовка на канвасе
+				}
+
+			}
+		}
+
+	}
+
 	function reDrawParticles(){
 		//Проход по частицам в массиве
 		for(let i in particles){
+			particles[i].reCalculateLife();
 			particles[i].position();
 			particles[i].reDraw();
 		}
@@ -87,6 +147,7 @@
 		//Рекурсивная функция
 		reDrawBackground();//Перерисовка фона
 		reDrawParticles();//Перерисовка частиц
+		drawLines();
 		requestAnimationFrame(loop);
 	}
 
